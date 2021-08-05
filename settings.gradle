@@ -1,0 +1,2 @@
+rootProject.name = "Slideshow app"
+include ':app'
