@@ -67,4 +67,16 @@ public class MainActivity extends AppCompatActivity {
             viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
         }
     };
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sliderHandler.removeCallbacks(sliderRunnable);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sliderHandler.postDelayed(sliderRunnable, 3000);
+    }
 }
